@@ -1,0 +1,3 @@
+[submodule "lib/benutils_terminal_manager"]
+	path = lib/benutils_terminal_manager
+	url = https://github.com/Kravantokh/benutils_terminal_manager/
