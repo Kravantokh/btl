@@ -1,4 +1,4 @@
-# Benoes's Terminal Launcher (BTL)
+# Benoe's Terminal Launcher (BTL)
 A terminal-based app launcher that makes use of my previously made libraries.
 
 I decided to make this project because I have had enough of not having a very simple app launcher on wayland. Considering that this app uses only the terminal it should work on every linux distribution. It scans /usr/bin only by default, so you should either have every application you wish to launch installed or symlinked there.
