@@ -8,7 +8,3 @@ Its intended use case is creating a keybind in your window manager or desktop en
 An example of doing this with Alacritty (with btl being installed in /usr/bin):
 
 ```alacritty --title Launcher -e /usr/bin/btl```
-<<<<<<< HEAD
-=======
-
->>>>>>> e50e0c0 (Fixed Cmake)
