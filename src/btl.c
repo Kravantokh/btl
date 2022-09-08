@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <stdint.h>
-
+#include <signal.h>
 
 #define TML_PROMPT_COLOR 190, 190, 190, 0
 
@@ -118,24 +118,30 @@ void input_handler(char c){
 
 }
 
+
 // A function to run a given executable as a separate process by using the double fork technique.
-static void double_fork(char* name){
+inline static void double_fork(char* name){
 	char path[TML_MAX_NAME_LENGTH + 24] = "/usr/bin/";
 	
 	strcat(path, name);
-	
-	printf("Forking with \"%s\"", path);
+	strcat(path, " & disown");
+
+	system(path);
+
+	/*printf("Forking with \"%s\"", path);
 	
 	// Child
-if(fork() == 0){
+	if(fork() == 0){
 		if (fork() == 0)
 		// Grandchild
-			execl(path, ".",(char*)NULL );
+			execl(path, "/",(char*)NULL );
 		else
 			// Child
 			exit(0);
-	}
-	
+	}*/
+
+
+	//execl(path, "/",(char*)NULL );
 }
 
 
@@ -151,6 +157,10 @@ void resize(int r, int c){
 
 
 void tm_initCall(){
+	// Ignore some signals
+	signal(SIGTERM,SIG_IGN);
+	signal(SIGHUP,SIG_IGN);
+
 	tm_clear();
 	tm_getTerminalSize(&height, &width);	
 	tm_setResizeCallback(&resize);
