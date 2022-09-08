@@ -20,5 +20,14 @@ An example of doing this with Alacritty (with btl being installed in /usr/bin):
 * Ninja (If you wish to use the given compile script)
 
 ### Compilation process
+* Clone the repo with the `git clone --recursive https://github.com/Kravantokh/btl/` command.
 * Run `compile.sh` (after using `chmod +x on it`)
-* It is assumed that you know how to deal with CMake if you use it without Ninja.
+_It is assumed that you know how to deal with CMake if you do not use Ninja._
+
+### Customization
+The text colors can be changed by editing the following section in `src/btl.c`:
+```
+#define TML_PROMPT_COLOR r, g, b, 0     - color of your entered search term
+#define TML_SELECTION_COLOR r, g, b, 0  - color of the first match
+#define TML_TEXT_COLOR r, g, b, 0       - color of the rest of the matches
+```
