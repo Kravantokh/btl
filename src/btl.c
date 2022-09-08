@@ -9,9 +9,7 @@
 #include <signal.h>
 
 #define TML_PROMPT_COLOR 190, 190, 190, 0
-
 #define TML_SELECTION_COLOR 255, 255, 255, 0 
-
 #define TML_TEXT_COLOR 75, 75, 75, 0
 
 #define TML_MAX_NAME_LENGTH 64
